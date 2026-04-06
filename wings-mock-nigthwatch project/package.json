@@ -1,0 +1,15 @@
+{
+  "name": "webdesign-manageproductstatus",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node runPlayground.js",
+    "playground": "node runPlayground.js",
+    "score": "node nightwatch-user-scorer.js"
+  },
+  "devDependencies": {
+    "chromedriver": "^146.0.0",
+    "nightwatch": "^3.15.0"
+  }
+}

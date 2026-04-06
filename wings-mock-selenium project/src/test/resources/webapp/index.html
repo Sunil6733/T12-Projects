@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        background: radial-gradient(
+          circle at top,
+          #9b9be5,
+          #9cb7d6 40%,
+          #d3a4f5 100%
+        );
+        color: #222;
+      }
+      .app {
+        width: min(700px, 95%);
+        padding: 24px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        margin-top: 0;
+        text-align: center;
+        font-size: 2rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card {
+        padding: 18px;
+        border-radius: 14px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), #eef4ff);
+        box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
+      label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      select,
+      input {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid #c8cedc;
+        font-size: 1rem;
+        margin-bottom: 12px;
+      }
+      input[readonly] {
+        background: #f8f8ff;
+        color: #333;
+      }
+      button {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: none;
+        background: #5b4df4;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <h1>Currency Converter</h1>
+
+      <div class="grid">
+        <div class="card">
+          <label for="currency_from_find">Convert From:</label>
+          <select id="currency_from_find">
+            <option value="INR">INR - Indian Rupee</option>
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+          </select>
+
+          <label for="given_amount">Enter amount</label>
+          <input
+            id="given_amount"
+            type="number"
+            placeholder="Enter amount"
+            value="67567"
+          />
+
+          <label for="convert_date">Select date</label>
+          <input id="convert_date" type="date" />
+        </div>
+
+        <div class="card">
+          <label for="currency_to_find">Convert To:</label>
+          <select id="currency_to_find">
+            <option value="USD">USD - US Dollar</option>
+            <option value="EUR">EUR - Euro</option>
+            <option value="INR">INR - Indian Rupee</option>
+          </select>
+
+          <label for="converted_amount">Converted Amount</label>
+          <input
+            id="converted_amount"
+            type="text"
+            readonly
+            placeholder="Result appears here"
+          />
+
+          <button id="convertBtn" type="button">Convert</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const rates = {
+        INR: { USD: 0.012, EUR: 0.011624, INR: 1 },
+        USD: { INR: 83.5, EUR: 0.91, USD: 1 },
+        EUR: { INR: 92.4, USD: 1.1, EUR: 1 },
+      };
+
+      const dateInput = document.getElementById("convert_date");
+      dateInput.value = new Date().toLocaleDateString("en-CA");
+
+      document.getElementById("convertBtn").addEventListener("click", () => {
+        const from = document.getElementById("currency_from_find").value;
+        const to = document.getElementById("currency_to_find").value;
+        const amount = parseFloat(
+          document.getElementById("given_amount").value,
+        );
+        const rate = rates[from][to];
+        const resultField = document.getElementById("converted_amount");
+
+        if (!amount || amount <= 0) {
+          resultField.value = "Please enter a valid amount";
+          return;
+        }
+
+        if (!dateInput.value) {
+          resultField.value = "Please select a date";
+          return;
+        }
+
+        const converted = (amount * rate).toFixed(2);
+        resultField.value = converted;
+      });
+    </script>
+  </body>
+</html>

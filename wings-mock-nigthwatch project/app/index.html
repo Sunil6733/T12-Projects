@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Product Status</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <nav class="page-nav">
+        <div class="page-title">
+          <h1>Manage Products</h1>
+        </div>
+
+        <div class="status-nav">
+          <button id="ordered-tab" class="tab active" data-target="mps-ordered">
+            Ordered
+          </button>
+          <button id="dispatched-tab" class="tab" data-target="mps-dispatched">
+            Dispatched
+          </button>
+          <button
+            id="outfordelivery-tab"
+            class="tab"
+            data-target="mps-outfordelivery"
+          >
+            Out For Delivery
+          </button>
+        </div>
+      </nav>
+
+      <main>
+        <section id="mps-ordered" class="tab-panel active">
+          <table>
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="productid1">#productid1</td>
+                <td>TV</td>
+                <td>XYZ 165 cm (65 inch) Ultra HD (4K) LED Smart Android TV</td>
+                <td>48,999</td>
+              </tr>
+              <tr>
+                <td id="productid2">#productid2</td>
+                <td>Smart Watch</td>
+                <td>ABC 1.69 Lucid Display bluetooth calling function</td>
+                <td>1,399</td>
+              </tr>
+              <tr>
+                <td id="productid3">#productid3</td>
+                <td>Mobile</td>
+                <td>DCE Lorem D21 FE 5G with 8 GB RAM</td>
+                <td>35,999</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="mps-dispatched" class="tab-panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="productid4">#productid4</td>
+                <td>Headphones</td>
+                <td>True wireless noise cancelling earphones</td>
+                <td>3,599</td>
+              </tr>
+              <tr>
+                <td id="productid5">#productid5</td>
+                <td>Bluetooth Speaker</td>
+                <td>Portable speaker with 20W output and LED lights</td>
+                <td>2,499</td>
+              </tr>
+              <tr>
+                <td id="productid6">#productid6</td>
+                <td>Camera</td>
+                <td>Mirrorless camera with 24MP sensor and 4K video</td>
+                <td>45,999</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="mps-outfordelivery" class="tab-panel">
+          <table>
+            <thead>
+              <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="productid7">#productid7</td>
+                <td>Gaming Laptop</td>
+                <td>17.3-inch laptop with RTX graphics and 32GB RAM</td>
+                <td>129,999</td>
+              </tr>
+              <tr>
+                <td id="productid8">#productid8</td>
+                <td>Air Fryer</td>
+                <td>Multi-cooker air fryer with 7 preset modes</td>
+                <td>5,199</td>
+              </tr>
+              <tr>
+                <td id="productid9">#productid9</td>
+                <td>Fitness Band</td>
+                <td>Sleep tracking, heart rate monitor and 10-day battery</td>
+                <td>999</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
