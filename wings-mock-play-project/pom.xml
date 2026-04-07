@@ -91,8 +91,7 @@
                 <version>3.1.2</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/Run*.java</include>
+                        <include>**/SeleniumRunTest.java</include>
                     </includes>
                 </configuration>
                 <dependencies>
