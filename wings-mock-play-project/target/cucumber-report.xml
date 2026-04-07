@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="6.898" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Flight Booking Reservation" name="Complete flight booking with coupon and location selection" time="6.73">
+<system-out><![CDATA[
+Given User navigates to flight booking application..........................passed
+When User finds and clicks the coupon button inside iframe on the right side and gets its value.passed
+And User selects Place 4 value from the From field in Welcome Aboard section.passed
+Then User clicks the Search Flight button...................................passed
+And User verifies the flight search results are displayed...................passed
+]]></system-out>
+</testcase>
+</testsuite>

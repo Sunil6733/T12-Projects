@@ -66,3 +66,17 @@ function startServer() {
 }
 
 module.exports = { startServer };
+
+// Start the server when this file is run directly
+if (require.main === module) {
+  startServer()
+    .then(({ server, port }) => {
+      console.log(
+        `✓ Flight Booking Server started on http://localhost:${port}`,
+      );
+    })
+    .catch((error) => {
+      console.error("Failed to start server:", error);
+      process.exit(1);
+    });
+}

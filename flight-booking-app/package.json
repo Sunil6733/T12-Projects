@@ -1,0 +1,16 @@
+{
+  "name": "flight-booking-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Flight Booking Web Application",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "flight",
+    "booking"
+  ],
+  "author": "",
+  "license": "ISC"
+}
